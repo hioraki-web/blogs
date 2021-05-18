@@ -1,0 +1,10 @@
+<div class="details">
+    <h1 class="title">{{article[0].title}}</h1>
+    <h2 class="intro">{{article[0].intro}}</h2>
+    <h3 class="date">作者发布于:{{article[0].date}}</h3>
+    <div class="contents" >
+      <pre>
+          <div v-html="html" class="code"></div>
+      </pre>
+    </div>
+</div>

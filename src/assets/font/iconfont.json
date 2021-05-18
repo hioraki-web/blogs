@@ -1,0 +1,23 @@
+{
+  "id": "2523466",
+  "name": "2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1078212",
+      "name": "上一曲40",
+      "font_class": "tushujiemianshangyiqu40",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "1078218",
+      "name": "下一曲40",
+      "font_class": "tushujiemianxiayiqu40",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    }
+  ]
+}

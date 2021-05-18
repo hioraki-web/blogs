@@ -1,0 +1,57 @@
+<div class="admArticle">
+    <!-- 面包导航 -->
+    <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>文章管理</el-breadcrumb-item>
+        <el-breadcrumb-item>文章管理</el-breadcrumb-item>
+      </el-breadcrumb>
+      
+      <!-- 表格 -->
+      <div class="table-admArticle">
+      <el-table
+      :data="admTable"
+      style="width: 100%">
+      <el-table-column
+      type="index">
+    </el-table-column>
+
+      <el-table-column
+        prop="title"
+        label="标题"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="contents"
+        label="内容"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        label="时间">
+      </el-table-column>
+      <el-table-column
+      prop="name"
+      label="分类">
+    </el-table-column>
+    <el-table-column
+    label="操作">
+    <template slot-scope="scope">
+      <el-button type="primary" icon="el-icon-edit" size='small' @click="alters(scope.row)" circle></el-button>
+      <el-button type="danger" icon="el-icon-delete" circle size='small' @click="delArticle(scope.row)"></el-button>
+  </template>
+  </el-table-column>
+    </el-table>
+    </div>
+
+    <!-- 分页 -->
+    <el-pagination
+    layout="prev, pager, next"
+    :page-size="2"
+    :total="+total"
+    :background='true'
+    class="btn-ps"
+    @current-change=' getArticlePage'
+    :current-page="pageNum"
+    >
+  </el-pagination>
+</div>

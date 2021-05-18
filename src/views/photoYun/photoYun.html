@@ -1,0 +1,26 @@
+<div class="photoYun">
+    <!-- 标题 -->
+    <el-row class="title">
+        <el-col>
+           <h2>
+            <span class="el-icon-picture"></span>
+           相册内容
+        </h2>
+        </el-col>
+    </el-row>
+    <!-- 相片 -->
+    <el-row class="photo">
+        <el-col :span="8" v-for="item in photo" :key=item.id>
+         <img :src="item.path" alt="" title="">
+        </el-col>
+    </el-row>
+    <!-- 分页 -->
+    <el-pagination class="page"
+    layout="prev, pager, next"
+    :page-size="3"
+    :background="true"
+    :total="total"
+    @current-change="getPage"
+    >
+  </el-pagination>
+</div>

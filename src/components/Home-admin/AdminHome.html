@@ -1,0 +1,135 @@
+<el-row type="flex" justify="center" class="contener">
+    <el-col :span="22">
+      <el-container>
+        <!-- 头部 -->
+        <el-header>
+          <!-- 名字 -->
+          <el-row>
+            <el-col :span="6">
+              <h1>admin</h1>
+            </el-col>
+
+            <!-- 搜索框 -->
+            <el-col :span="5" class="input">
+              <el-input
+                placeholder="请输入内容"
+                v-model="input3"
+                class="input-with-select"
+              >
+                <el-button slot="append" icon="el-icon-search" class="btn"></el-button>
+              </el-input>
+            </el-col>
+
+            <!-- 音乐 -->
+            <el-col :span="0">
+              <audio
+                src="http://127.0.0.1:8080/blogs/media/HITA - 眉间雪.5c6929f4.mp3"
+                ref="audio"
+                @ended="overAudio"
+              ></audio>
+            </el-col>
+
+            <!-- 控件 -->
+            <el-col :span="6" :push="4">
+              <el-row>
+                <!-- 图片 -->
+                <el-col :span="4">
+                  <div class="demo-type">
+                    <el-avatar :size="40" src="../../assets/img/2538772349388939.jpg">
+                      <img
+                        src="../../assets/img/2538772349388939.jpg"
+                        :class="{ roter: isroter }"
+                      />
+                    </el-avatar>
+                  </div>
+                </el-col>
+                <!-- 播放 -->
+                <el-col :span="6" class="play">
+                  <span>眉间雪</span>
+                  <div>
+                    <span class="iconfont icon-tushujiemianshangyiqu40"></span>
+                    <span
+                      :class="{
+                        'el-icon-video-play': playIocn,
+                        'el-icon-video-pause': playPaues,
+                      }"
+                      @click="startPlayOrPause"
+                    ></span>
+                    <span class="iconfont icon-tushujiemianxiayiqu40"></span>
+                  </div>
+                </el-col>
+              </el-row>
+            </el-col>
+
+            <!-- 个人信息 -->
+            <el-col :span="3" :push="4">
+              <span class="esc" @click="userEsc">退出</span>
+            </el-col>
+          </el-row>
+        </el-header>
+        <el-container>
+          <!-- 侧边栏 -->
+          <el-aside width="250px">
+            <el-menu
+              default-active="2"
+              class="el-menu-vertical-demo"
+              background-color="transparent"
+              text-color="#fff"
+              active-text-color="#ffd04b"
+              :router="true"
+              active-background-color="#ccc"
+            >
+              <!-- 管理用户页面 -->
+              <el-submenu index="2">
+                <template slot="title">
+                  <i class="el-icon-user-solid"></i>
+                  <span>管理用户</span>
+                </template>
+                <el-menu-item index="/admin">
+                  <i class="el-icon-user-solid"></i>
+                  <span>admin</span>
+                </el-menu-item>
+              </el-submenu>
+              <!-- 相册管理页面 -->
+              <el-submenu index="3">
+                <template slot="title">
+                  <i class="el-icon-picture"></i>
+                  <span>相册管理</span>
+                </template>
+                <!-- 相册上传 -->
+                  <el-menu-item index="/photo">
+                    <i class="el-icon-picture"></i>
+                    <span>相册上传</span>
+                  </el-menu-item>
+                <!-- 照片删除 -->
+                   <el-menu-item index="/delPhoto">
+                    <i class="el-icon-delete-solid"></i>
+                    <span>相册管理</span>
+                   </el-menu-item>
+              </el-submenu>
+
+              <!-- 文章管理 -->
+              <el-submenu index="4">
+                <template slot="title">
+                  <i class="el-icon-folder"></i>
+                  <span>文章管理</span>
+                </template>
+                <el-menu-item index="/addAritcle">
+                  <i class="el-icon-document-add"></i>
+                  <span>文章编写</span>
+                </el-menu-item>
+                <el-menu-item index="/admArticle">
+                  <i class="el-icon-user-solid"></i>
+                  <span>文章管理</span>
+                </el-menu-item>
+              </el-submenu>
+            </el-menu>
+          </el-aside>
+          <el-main>
+            <!-- 预留一个出口 -->
+            <router-view></router-view>
+          </el-main>
+        </el-container>
+      </el-container>
+    </el-col>
+  </el-row>

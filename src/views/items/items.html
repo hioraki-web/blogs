@@ -1,0 +1,64 @@
+<div class="items">
+           <!-- 标题 -->
+           <el-row class="title">
+            <el-col>
+                <h3 >
+                  <span class="el-icon-document"></span>
+                  项目总结
+               </h3>
+            </el-col>
+        </el-row>
+        <!-- 文章列表 -->
+        <el-row class="aritcle" v-for="item in article" :key="item.id">
+            <el-col :span=6>
+             <img :src="item.photo" alt="" @click="detaile(item.id)">
+            </el-col>
+            <el-col :span=14>
+             <el-row>
+                 <el-col>
+                     <h1>
+                      <span class="el-icon-s-promotion logo "></span>
+                       {{item.title}}
+                     </h1>
+                 </el-col>
+                 <el-col class="intro">
+                  <p><span>文章简介:</span>
+                    {{item.intro}}
+                  </p>
+                 </el-col>
+                 <el-col class="artData">
+      
+                      <ul>
+                          <li>
+                              <span class="el-icon-user-solid"></span>
+                              <span>admin</span>
+                          </li>
+                          <li>
+                              <span class="el-icon-time"></span>
+                              <span>{{item.date}}</span>
+                          </li>
+                          <li>
+                              <span class="
+                              el-icon-chat-dot-round"></span>
+                              <span>评论</span>
+                          </li>
+                      </ul>
+                 </el-col>
+                 <el-col class="art_tag">
+                  <el-tag>项目总结</el-tag>
+                 </el-col>
+             </el-row>
+             
+             
+            </el-col>
+        </el-row>
+         <!-- 分页 -->
+         <el-pagination class="page"
+         layout="prev, pager, next"
+         :page-size="2"
+         :background="true"
+         :total="total"
+         @current-change="getPage"
+         >
+       </el-pagination>
+</div>

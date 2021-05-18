@@ -1,0 +1,76 @@
+//  头部样式
+.el-header {
+    background-color: rgba(65, 71, 83, 0.9);
+    border-bottom: 1px solid #fff;
+    h1 {
+      font-size: 28px;
+      line-height: 59px;
+      color: #d4d4d4;
+    }
+    .input {
+      line-height: 59px;
+      input {
+        background-color: transparent;
+        color: #fff;
+      }
+      input:focus {
+        border: 1px solid #fff;
+      }
+      .btn,
+      .el-input-group__append {
+        background-color: transparent;
+      }
+      .el-icon-search {
+        color: #000;
+      }
+    }
+    //  music
+    .demo-type {
+      margin-top: 10px;
+    }
+    // 播放样式
+    .play {
+      margin-top: 5px;
+      font-size: 18px;
+      color: #a6a8b1;
+      text-align: center;
+      span {
+        padding: 0 3px;
+        cursor: pointer;
+      }
+    }
+    // 退出样式
+    .esc {
+      line-height: 59px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+    }
+  }
+  //  侧边栏样式
+  .el-aside {
+    background-color: rgba(0, 0, 0, 0.5);
+    //  background-color:#F0F8FF;
+    border-right: 1px solid #fff;
+    .el-menu {
+      border: none;
+    }
+  }
+  .home,
+  .el-container {
+    height: 100%;
+  }
+  .el-main {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  @keyframes rorter {
+    0% {
+      transform: rotate(0deg);
+    }
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+  .roter {
+    animation: rotate 5s linear infinite;
+  }
